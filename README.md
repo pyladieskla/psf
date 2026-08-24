@@ -1,13 +1,6 @@
 # PSF Grant: Refugee Python Skills Workshop
 
-The event website for the PyLadies Kampala Refugee Python Skills Workshop in Arua, Uganda, a
-program funded through its own Python Software Foundation grant application, separate from the
-main PyLadies Kampala chapter site ([pyladies-kampala-netlify](../pyladies-kampala-netlify)).
-This site fulfills that grant's "Event website" requirement.
-
-Content is sourced directly from the chapter's PSF grant application for this program and its
-accompanying web copy. The objective, curriculum, mentor ratio, and supporter credits all come
-from that source.
+The event website for the PyLadies Kampala Refugee Python Skills Workshop in Arua, Uganda.
 
 ## Stack
 
