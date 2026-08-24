@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-amber: #b45309;
+  --color-brand-amber-dark: #92400e;
+  --color-brand-amber-tint: #fdf3e7;
+  /* lighter variant for text on the dark charcoal background - #b45309
+     only hits 3.48:1 there, which fails WCAG AA (needs 4.5:1) */
+  --color-brand-amber-light: #fbbf24;
+  --color-brand-dark: #1c1917;
+  --color-brand-dark-soft: #57534e;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-brand-dark);
+}
