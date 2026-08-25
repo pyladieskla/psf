@@ -10,6 +10,10 @@ const nextConfig = {
   images: { unoptimized: true },
   basePath: isGithubActions ? `/${repoName}` : "",
   assetPrefix: isGithubActions ? `/${repoName}/` : "",
+  // exports every route as route/index.html instead of route.html - this is
+  // Next's own recommended setting for GitHub Pages, since it avoids relying
+  // on the host resolving extensionless .html files for routes other than "/"
+  trailingSlash: true,
 };
 
 export default nextConfig;

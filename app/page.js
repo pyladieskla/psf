@@ -1,8 +1,7 @@
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import BackToTop from "@/components/BackToTop";
-
-const REGISTER_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfozBLWEKCDk5I3ikK0aSz938gwHCWqaHbmNJ2iiZcyTT6MOA/viewform?usp=publish-editor";
+import SectionEyebrow from "@/components/SectionEyebrow";
 
 const STATS = [
   { number: "100", label: "Refugee Participants Expected" },
@@ -33,13 +32,7 @@ const WHO_ITS_FOR = [
 
 const SUPPORTERS = ["Python Software Foundation", "Africa's Talking", "MTN Foundation", "Propel"];
 
-function SectionEyebrow({ children }) {
-  return (
-    <p className="font-display text-sm font-bold uppercase tracking-widest text-brand-amber">
-      {children}
-    </p>
-  );
-}
+const PARTNER_ORGS = ["WENDA", "SSURA", "CORA", "REDNET", "ISC SCORE"];
 
 export default function Home() {
   return (
@@ -51,7 +44,7 @@ export default function Home() {
         <section className="bg-brand-dark px-6 py-20 text-center text-white md:py-28">
           <div className="mx-auto max-w-3xl">
             <span className="inline-block rounded-md bg-white/10 px-4 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20">
-              Arua, Uganda &middot; 2026
+              16 January 2027 &middot; Arua, Uganda
             </span>
             <p className="mt-6 font-display text-xl font-medium text-brand-amber-light">
               Creating pathways through technology.
@@ -65,12 +58,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a
-                href={REGISTER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#selection"
                 className="rounded-md bg-brand-amber px-7 py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-brand-amber-dark"
               >
-                Register for the Workshop
+                How Participants Are Selected
               </a>
               <a
                 href="#about"
@@ -178,9 +169,7 @@ export default function Home() {
         {/* WHO IS IT FOR */}
         <section className="bg-brand-dark px-6 py-20 text-white">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="font-display text-sm font-bold uppercase tracking-widest text-brand-amber-light">
-              Who Is It For?
-            </p>
+            <SectionEyebrow dark>Who Is It For?</SectionEyebrow>
             <p className="mx-auto mt-6 max-w-xl text-white/75">
               This workshop is specifically for refugees in Arua and surrounding communities
               who are interested in learning technology. It is especially suitable for:
@@ -196,6 +185,42 @@ export default function Home() {
             <p className="mt-8 font-display text-xl font-bold">
               No previous Python experience is required.
             </p>
+          </div>
+        </section>
+
+        {/* PARTICIPANT SELECTION */}
+        <section id="selection" className="scroll-mt-20 bg-brand-amber-tint px-6 py-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionEyebrow>Participant Selection and Partner Coordination</SectionEyebrow>
+            <div className="mt-6 space-y-4 text-left text-brand-dark-soft sm:text-center">
+              <p>
+                PyLadies Kampala is working with WENDA and its partner organisations to
+                identify and nominate refugee participants for the Refugee Python Workshop
+                under the Persons of Concern Program. We are building on our previous work with
+                refugee communities in Arua, where we worked with organisations including
+                SSURA, CORA, REDNET, and ISC SCORE during our Web Development Bootcamp. Through
+                these existing partnerships, WENDA is helping us reach organisations that work
+                directly with refugees and identify participants who would benefit from the
+                workshop.
+              </p>
+              <p>
+                We are not using an open public registration process. Instead, participants are
+                nominated through these organisations and selected based on agreed criteria,
+                including refugee status, interest in technology, previous training, commitment
+                to participate, and potential to share what they learn with their communities.
+                We will also prioritise the participation of women and girls.
+              </p>
+            </div>
+            <div className="mx-auto mt-10 flex max-w-2xl flex-wrap justify-center gap-4">
+              {PARTNER_ORGS.map((name) => (
+                <span
+                  key={name}
+                  className="rounded-md border border-black/10 bg-white px-5 py-3 text-sm font-bold text-brand-dark shadow-sm"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -264,9 +289,7 @@ export default function Home() {
         {/* FROM LEARNING TO OPPORTUNITY */}
         <section className="bg-brand-dark px-6 py-20 text-center text-white">
           <div className="mx-auto max-w-2xl">
-            <p className="font-display text-sm font-bold uppercase tracking-widest text-brand-amber-light">
-              From Learning to Opportunity
-            </p>
+            <SectionEyebrow dark>From Learning to Opportunity</SectionEyebrow>
             <div className="mt-6 space-y-4 text-white/75">
               <p>For us, this workshop is about more than teaching Python.</p>
               <p>
@@ -312,13 +335,16 @@ export default function Home() {
             <p className="mt-4 text-white/90">
               Come learn Python, meet mentors, and take your first step into programming.
             </p>
+            <p className="mt-4 text-sm text-white/80">
+              Participants are nominated through our partner organisations, not through open
+              public registration. If you represent an organisation working with refugees in
+              Arua and would like to nominate participants, get in touch.
+            </p>
             <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:kampala@pyladies.com"
               className="mt-8 inline-block rounded-md bg-brand-dark px-8 py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-black"
             >
-              Register for the Workshop
+              Contact Us
             </a>
             <p className="mt-6 text-sm text-white/90">
               Questions?{" "}
@@ -333,7 +359,11 @@ export default function Home() {
       <footer className="bg-brand-dark px-6 py-10 text-center text-sm text-white/60">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-3">
           <p>
-            A PyLadies Kampala program. Report concerns to{" "}
+            A PyLadies Kampala program. Read our{" "}
+            <Link href="/code-of-conduct" className="underline">
+              Code of Conduct
+            </Link>{" "}
+            or report concerns to{" "}
             <a href="mailto:kampala@pyladies.com" className="underline">
               kampala@pyladies.com
             </a>
