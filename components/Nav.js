@@ -6,7 +6,9 @@ import Link from "next/link";
 const links = [
   { href: "/#about", label: "About" },
   { href: "/#curriculum", label: "Curriculum" },
+  { href: "/#selection", label: "Selection" },
   { href: "/#mentors", label: "Mentors" },
+  { href: "/#supporters", label: "Supporters" },
   { href: "/code-of-conduct", label: "Code of Conduct" },
 ];
 
@@ -25,12 +27,12 @@ export default function Nav() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-5 xl:gap-6 lg:flex">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold uppercase tracking-wide text-brand-dark-soft transition hover:text-brand-amber"
+              className="whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-brand-dark-soft transition hover:text-brand-amber xl:text-sm"
             >
               {link.label}
             </Link>
