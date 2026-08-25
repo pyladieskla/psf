@@ -5,12 +5,9 @@ import Link from "next/link";
 
 const links = [
   { href: "/#about", label: "About" },
-  { href: "/#curriculum", label: "What We'll Do" },
-  { href: "/#selection", label: "Selection" },
+  { href: "/#curriculum", label: "Curriculum" },
   { href: "/#mentors", label: "Mentors" },
-  { href: "/#supporters", label: "Supporters" },
   { href: "/code-of-conduct", label: "Code of Conduct" },
-  { href: "/#join", label: "Join Us" },
 ];
 
 export default function Nav() {
@@ -24,11 +21,11 @@ export default function Nav() {
             PSF
           </span>
           <span className="font-display text-lg font-bold text-brand-dark">
-            Refugee Python Skills Workshop
+            Refugee Python Workshop
           </span>
         </Link>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -51,7 +48,7 @@ export default function Nav() {
           aria-label="Toggle navigation menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center md:hidden"
+          className="flex h-9 w-9 items-center justify-center lg:hidden"
         >
           <svg viewBox="0 0 24 24" className="h-6 w-6 text-brand-dark" fill="none" stroke="currentColor" strokeWidth="2">
             {open ? (
@@ -64,7 +61,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="flex flex-col gap-1 border-t border-black/5 bg-white px-6 py-4 md:hidden">
+        <div className="flex flex-col gap-1 border-t border-black/5 bg-white px-6 py-4 lg:hidden">
           {links.map((link) => (
             <Link
               key={link.href}
