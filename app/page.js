@@ -44,7 +44,7 @@ export default function Home() {
         <section className="bg-brand-dark px-6 py-20 text-center text-white md:py-28">
           <div className="mx-auto max-w-3xl">
             <span className="inline-block rounded-md bg-white/10 px-4 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20">
-              16 January 2027 &middot; Arua, Uganda
+              7 November 2026 &middot; Arua, Uganda
             </span>
             <p className="mt-6 font-display text-xl font-medium text-brand-amber-light">
               Creating pathways through technology.
